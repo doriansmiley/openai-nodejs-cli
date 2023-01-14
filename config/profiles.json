@@ -1,0 +1,16 @@
+{
+  "default": {
+    "daoCode": 1,
+    "mongoUrl": "mongodb://spiUser:spiPassword@localhost:27017/spi",
+    "assetStorageRoot": "~/workspace/NodeServices/webAssetManager/test/images/managedCache/",
+    "assetStorageType": 1,
+    "baseUrl": "http://localhost/",
+    "webRoot": "/",
+    "tokenExpiryOffset": 360000000,
+    "parserCode": "node",
+    "httpServiceCode": "node",
+    "eventDispatcherCode": "abstract",
+    "webAssetMangerApiURL": "http://localhost:3008",
+    "templateApiUrl": "http://localhost:3003"
+  }
+}

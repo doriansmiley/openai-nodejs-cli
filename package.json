@@ -1,0 +1,27 @@
+{
+  "name": "@silpub/designer",
+  "version": "1.0.0",
+  "bin": {
+    "designer": "index.js"
+  },
+  "description": "cli for Silicon Designer",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "pretty": "prettier --write ."
+  },
+  "author": "Dorian Smiley",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "1.2.2",
+    "debug": "4.3.4",
+    "dotenv": "16.0.3",
+    "form-data": "4.0.0",
+    "supports-color": "9.3.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "prettier": "^2.1.2"
+  }
+}
