@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# ENV vars
+**/.env
+
+# mac
+**/.DS_Store
+
+# Webstorm
+**/.idea
