@@ -1,5 +1,8 @@
 # openai-nodejs-cli
-NodeJS CLI tool for submitting fine-tuning jobs to OpenAI. This toll can also generate stub code for GPT plugins.
+NodeJS CLI tool for submitting fine-tuning jobs to OpenAI. 
+This toll can also generate stub code for GPT plugins. Please refer to the
+[OpenAI documentation](https://platform.openai.com/docs/plugins/getting-started/plugin-manifest) 
+for a detailed explanation of the plugin manifest and architecture.
 
 # Options:
 ```
