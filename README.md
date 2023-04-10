@@ -1,3 +1,5 @@
+![Test Status](https://github.com/doriansmiley/openai-nodejs-cli/actions/workflows/test.yml/badge.svg)
+
 # openai-nodejs-cli
 NodeJS CLI tool for submitting fine-tuning jobs to OpenAI. 
 This toll can also generate stub code for GPT plugins. Please refer to the
