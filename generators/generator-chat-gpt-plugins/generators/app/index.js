@@ -86,14 +86,9 @@ module.exports = class extends Generator {
         name: "verificationTokens",
         message: "Enter the verification tokens in the following format: '[service, token], [service, token]'",
         validate: input => {
-          if (input.trim().length === 0) {
-            return "Please enter the verification tokens";
-          }
-          const tokens = input.split(",").map(token => token.trim());
-          for (const token of tokens) {
-            if (!/\[.*?,.*?\]/.test(token)) {
-              return "Invalid token format. Please use '[service, token]' format";
-            }
+          const regex = /^\s*\[\s*"[^"]*"\s*,\s*"[^"]*"\s*(,\s*"[^"]*"\s*,\s*"[^"]*"\s*)*\]\s*(,\s*\[\s*"[^"]*"\s*,\s*"[^"]*"\s*(,\s*"[^"]*"\s*,\s*"[^"]*"\s*)*\]\s*)*\s*$/;
+          if (!regex.test(input)) {
+            return "Invalid token format. Please use '[service, token]' format";
           }
           return true;
         },
@@ -230,18 +225,14 @@ module.exports = class extends Generator {
         type: "input",
         name: "openApiSpec",
         message: "Enter the path to an OpenAPI spec file (or leave blank for default):",
-        default: "openapi.yaml",
         validate: input => {
-          if (input) {
-            const filePath = path.resolve(process.cwd(), input);
-            try {
-              fs.accessSync(filePath, fs.constants.R_OK);
-              return true;
-            } catch (err) {
-              return `Unable to read file at ${input}. Please check the file path.`;
-            }
+          const filePath = input ? path.resolve(input) : path.join(__dirname, 'templates/openapi.yaml');
+          try {
+            fs.accessSync(filePath, fs.constants.R_OK);
+            return true;
+          } catch (err) {
+            return `Unable to read file at ${input}. Please check the file path.`;
           }
-          return true;
         },
       }
     ];
@@ -344,6 +335,5 @@ module.exports = class extends Generator {
   }
 
 install() {
-    this.installDependencies();
   }
 };

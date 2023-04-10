@@ -20,6 +20,7 @@
     "libnpx": "^10.2.4",
     "supports-color": "9.3.1",
     "uuid": "^9.0.0",
+    "yeoman-environment": "^3.15.1",
     "yeoman-generator": "^5.8.0"
   },
   "devDependencies": {

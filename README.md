@@ -1,5 +1,5 @@
 # openai-nodejs-cli
-NodeJS CLI tool for submitting fine-tuning jobs to OpenAI.
+NodeJS CLI tool for submitting fine-tuning jobs to OpenAI. This toll can also generate stub code for GPT plugins.
 
 # Options:
 ```
@@ -10,7 +10,8 @@ NodeJS CLI tool for submitting fine-tuning jobs to OpenAI.
 
 -gjb --get-job [jobId]
     jobId -          The id of the job returned in the create call.
-
+-plg ---generate-plugin
+    creates a Chat GPT plugin
 -h --help
     Prints the help menu.
 ```
