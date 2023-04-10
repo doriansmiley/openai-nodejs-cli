@@ -17,8 +17,10 @@
     "debug": "4.3.4",
     "dotenv": "16.0.3",
     "form-data": "4.0.0",
+    "libnpx": "^10.2.4",
     "supports-color": "9.3.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "yeoman-generator": "^5.8.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",

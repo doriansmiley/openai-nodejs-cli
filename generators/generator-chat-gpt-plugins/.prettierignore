@@ -1,0 +1,4 @@
+**/templates
+/*
+!/generators/app/**
+!/__tests__/**

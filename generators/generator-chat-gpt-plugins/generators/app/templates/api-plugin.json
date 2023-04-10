@@ -1,0 +1,40 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "<%= humanName %>",
+  "name_for_model": "<%= modelName %>",
+  "description_for_human": "<%= humanDescription %>",
+  "description_for_model": "<%= modelDescription %>",
+  "auth": {
+    "type": "<%= authType %>"
+    <% if (authType === 'service_http') { %>,
+"authorization_type": "<%= authorizationType %>",
+"verification_tokens": {
+<%_ verificationTokens.forEach((tuple, index, array) => { _%>
+<%_ const [service, token] = tuple; _%>
+"<%= service %>": "<%= token %>"<%= index === array.length - 1 ? '' : ',' %>
+<%_ }); _%>
+}
+<% } else if (authType === 'user_http') { %>,
+"authorization_type": "<%= authorizationType %>"
+<% } else if (authType === 'oauth') { %>,
+"client_url": "<%= clientUrl %>",
+"scope": "<%= scope %>",
+"authorization_url": "<%= authorizationUrl %>",
+"authorization_content_type": "<%= authorizationContentType %>",
+"verification_tokens": {
+<%_ verificationTokens.forEach((tuple, index, array) => { _%>
+<%_ const [service, token] = tuple; _%>
+"<%= service %>": "<%= token %>"<%= index === array.length - 1 ? '' : ',' %>
+<%_ }); _%>
+}
+<% } %>
+},
+"api": {
+"type": "openapi",
+"url": "<%= apiUrl %>",
+"is_user_authenticated": <%= isUserAuthenticated %>
+},
+"logo_url": "<%= logoUrl %>",
+"contact_email": "<%= contactEmail %>",
+"legal_info_url": "<%= legalInfoUrl %>"
+}
