@@ -19,4 +19,4 @@ jobs:
         with:
           node-version: 17.5
       - run: npm ci
-      #TODO add test command
+      - run: npm test
