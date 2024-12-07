@@ -7,7 +7,7 @@ This toll can also generate stub code for GPT plugins. Please refer to the
 for a detailed explanation of the plugin manifest and architecture.
 
 # Options:
-```shell
+```
 -cft --create-fine-tune-job [specFile, trainingData, validationData]
     specFile -       relative path (from current directory) to the job spec json file.
     trainingData -   relative path (from current directory) to the job training data json file.
