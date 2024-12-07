@@ -1,3 +1,4 @@
+// IMPORTANT: DO NOT USE. This code is broken
 const debug = require('debug')('openai-nodejs-cli');
 const yeomanEnv = require("yeoman-environment").createEnv();
 const generatorName = require.resolve(
