@@ -7,7 +7,7 @@ This toll can also generate stub code for GPT plugins. Please refer to the
 for a detailed explanation of the plugin manifest and architecture.
 
 # Options:
-```
+```shell
 -cft --create-fine-tune-job [specFile, trainingData, validationData]
     specFile -       relative path (from current directory) to the job spec json file.
     trainingData -   relative path (from current directory) to the job training data json file.
@@ -22,6 +22,11 @@ for a detailed explanation of the plugin manifest and architecture.
 # Example Usage
 ```shell
 node index -cft ./specFile.json ./trainingData.jsonl ./validationData.jsonl
+```
+### IMPORTANT: don't forget to add your .env file!
+```shell
+OPENAI_API_KEY=<YOUR_SECRET>
+DEBUG=openai-nodejs-cli
 ```
 Note the referenced files are included in this repo. Please refer to the
 [OpenAI Fine-Tuning](https://beta.openai.com/docs/api-reference/fine-tunes/create) guide for more information about the file format
