@@ -1,15 +1,14 @@
-const axios = require('axios');
-const debug = require('debug')('openai-nodejs-cli');
+const { OpenAI } = require("openai");
+const debug = require("debug")("openai-nodejs-cli");
 
-module.exports = async function f({jobId}) {
-  const headers = {};
-  headers['Content-Type'] = 'application/json';
-  headers['Authorization'] = `Bearer ${process.env.OPENAI_API_KEY}`
-  debug(`headers ${headers}`);
-  const result = await axios.get(`${process.env.OPEN_API_FINE_TUNE_ENDPOINT}/${jobId}`, {
-    headers: {
-      ...headers
-    },
+module.exports = async function f({ jobId }) {
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
   });
-  return result.data;
+
+  debug(`Retrieving fine-tune job with ID: ${jobId}`);
+
+  // The SDK handles headers and endpoints internally.
+  const result = await openai.fineTuning.jobs.retrieve(jobId);
+  return result;
 };

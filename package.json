@@ -13,18 +13,19 @@
   "author": "Dorian Smiley",
   "license": "ISC",
   "dependencies": {
-    "axios": "1.2.2",
-    "debug": "4.3.4",
-    "dotenv": "16.0.3",
-    "form-data": "4.0.0",
+    "axios": "^1.7.9",
+    "debug": "^4.4.0",
+    "dotenv": "^16.4.7",
+    "form-data": "^4.0.1",
     "libnpx": "^10.2.4",
-    "supports-color": "9.3.1",
-    "uuid": "^9.0.0",
-    "yeoman-environment": "^3.15.1",
-    "yeoman-generator": "^5.8.0"
+    "openai": "^4.76.0",
+    "supports-color": "^9.4.0",
+    "uuid": "^11.0.3",
+    "yeoman-environment": "^4.4.3",
+    "yeoman-generator": "^7.3.3"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18",
-    "prettier": "^2.1.2"
+    "@types/node": "^22.10.1",
+    "prettier": "^3.4.2"
   }
 }

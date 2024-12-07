@@ -3,7 +3,6 @@
 require('dotenv').config();
 const createFineTuningJob = require("./commands/createFineTuningJob");
 const getFineTuningJob = require("./commands/getFineTuningJob");
-const generatePlugin = require("./commands/generatePlugin");
 const debug = require("debug")("openai-nodejs-cli");
 
 debug(`process env: ${process.env}`);
@@ -26,7 +25,7 @@ const execute = async function (command) {
                 debug(`args specFile: ${specFile}`);
                 debug(`args trainingData: ${trainingData}`);
                 debug(`args validationData: ${validationData}`);
-                return await createFineTuningJob({specFile, trainingData, validationData});
+                return await createFineTuningJob({ specFile, trainingData, validationData });
             case "--get-job":
             case "-gjb":
                 const [jobId] = process.argv.slice(3);
@@ -36,11 +35,7 @@ const execute = async function (command) {
                     );
                 }
                 debug(`args specFile: ${jobId}`);
-                return await getFineTuningJob({jobId});
-            case "--generate-plugin":
-            case "-plg":
-                return await generatePlugin();
-                break;
+                return await getFineTuningJob({ jobId });
             case "--help":
             case "-h":
             default:
