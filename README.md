@@ -35,38 +35,26 @@ and settings.
 Below is a typical response with the identifiers replaced with `xxx`
 ```json
 {
-	"object": "fine-tune",
-	"id": "ft-xxx",
-	"hyperparams": {
-		"n_epochs": 4,
-		"batch_size": null,
-		"prompt_loss_weight": 0.01,
-		"learning_rate_multiplier": null
-	},
-	"organization_id": "xxx",
-	"model": "davinci",
-	"training_files": [{
-		"object": "file",
-		"id": "file-xxx",
-		"purpose": "fine-tune",
-		"filename": "xxx.jsonl",
-		"bytes": 698,
-		"created_at": 1673736863,
-		"status": "uploaded",
-		"status_details": null
-	}],
-	"validation_files": [],
-	"result_files": [],
-	"created_at": 1673736863,
-	"updated_at": 1673736863,
-	"status": "pending",
-	"fine_tuned_model": null,
-	"events": [{
-		"object": "fine-tune-event",
-		"level": "info",
-		"message": "Created fine-tune: ft-xxx",
-		"created_at": 1673736863
-	}]
+    "object": "fine_tuning.job",
+    "id": "ftjob-1234",
+    "model": "gpt-4o-mini-2024-07-18",
+    "created_at": 1733604278,
+    "finished_at": null,
+    "fine_tuned_model": null,
+    "organization_id": "org-1234",
+    "result_files": [],
+    "status": "validating_files",
+    "validation_file": null,
+    "training_file": "file-1234",
+    "hyperparameters": {
+        "n_epochs": 1
+    },
+    "trained_tokens": null,
+    "error": {},
+    "user_provided_suffix": null,
+    "seed": 2139682031,
+    "estimated_finish": null,
+    "integrations": []
 }
 ```
 You can use the returned `id` property to poll the API:
