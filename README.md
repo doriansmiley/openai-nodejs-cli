@@ -15,8 +15,6 @@ for a detailed explanation of the plugin manifest and architecture.
 
 -gjb --get-job [jobId]
     jobId -          The id of the job returned in the create call.
--plg ---generate-plugin
-    creates a Chat GPT plugin
 -h --help
     Prints the help menu.
 ```
